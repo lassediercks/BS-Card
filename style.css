@@ -1,0 +1,94 @@
+:root {
+  --bc-inner: 0.5em 0.7em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background: whitesmoke;
+  font-family: Open Sans;
+}
+
+.card {
+  color: #535353;
+  margin: 0 auto 20px auto;
+  width: 84mm;
+  height: 55mm;
+  background: white;
+  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.03);
+  display: flex;
+  justify-content: center;
+  padding: 0 0 0 15mm;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+}
+
+/* add card */
+
+.add-card {
+  max-width: 600px;
+  background: #0e0e0e;
+  color: white;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 1em 2em;
+}
+
+.add-card-headline {
+  margin: 0;
+  padding: 0;
+}
+
+.label-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1.5em;
+}
+
+.label-input {
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 20px;
+  padding: var(--bc-inner);
+  color: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 1px;
+  transition: background-color 170ms ease-in-out;
+}
+
+.label-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.add-card-button {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: var(--bc-inner);
+  font-size: 20px;
+}

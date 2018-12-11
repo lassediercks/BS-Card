@@ -43,7 +43,7 @@
 
     <?php
       $query = "INSERT INTO `cards` (`Name`, `Titel`) VALUES ('Max Mustermann','PHP Entwickler')";
-      mysqli_query($conn, $query)
+      $conn->query($query)
     ?>
     <script src="index.js"></script>
   </body>

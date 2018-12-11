@@ -38,6 +38,8 @@
       <button class="add-card-button">Karte hinzufügen</button>
     </div>
 
+    <?php include 'connect-to-db.php'; ?>
     <script src="index.js"></script>
   </body>
 </html>
+

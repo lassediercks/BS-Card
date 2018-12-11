@@ -38,10 +38,8 @@
       <button class="add-card-button">Karte hinzufügen</button>
     </div>
 
-    <?php include 'connect-to-db.php'; ?>
-
-
-    <?php
+    <?php 
+      include 'connect-to-db.php';
       $query = "INSERT INTO `cards` (`Name`, `Titel`) VALUES ('Max Mustermann','PHP Entwickler')";
       $conn->query($query)
     ?>

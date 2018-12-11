@@ -1,3 +1,8 @@
+<?php 
+include 'connect-to-db.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,18 +16,17 @@
   <body>
     <main class="content">
       <h1>Visitenkarten die niemand braucht</h1>
+      <?php
 
-      <b-card>Mir gehört der Laden hier</b-card>
-      <b-card>Du Weißt schon Wer</b-card>
-      <b-card>Der Retter</b-card>
-      <b-card>Konkurrenzlos</b-card>
-      <b-card>Die Kokurrenz</b-card>
-      <b-card>König</b-card>
-      <b-card>Weltherrscher</b-card>
-      <b-card>Zielgruppe</b-card>
-      <b-card> Der/Die mit den Spendierhosen </b-card>
-      <b-card>Gott</b-card>
-      <b-card>Ich bin's</b-card>
+        $GetDataQuery = "SELECT ID,Name,Titel FROM cards";
+        $data = $conn->query($GetDataQuery);
+
+        while($card = $data->fetch_assoc()) {
+          echo "<b-card>" . $card["Titel"]. "</b-card>";
+        }
+
+        ?>
+
     </main>
 
     <div class="add-card">
@@ -39,10 +43,22 @@
     </div>
 
     <?php 
-      include 'connect-to-db.php';
-      $query = "INSERT INTO `cards` (`Name`, `Titel`) VALUES ('Max Mustermann','PHP Entwickler')";
-      $conn->query($query)
-    ?>
+      $query = "INSERT INTO `cards` (Name, Titel) VALUES ('Max Mustermann','PHP Entwickler')";
+
+
+      // if ($conn->connect_error) {
+      //   die("Connection failed: " . $conn->connect_error);
+      // } 
+
+      // if ($conn->query($query) === TRUE) {
+      //     echo "New record created successfully";
+      // } else {
+      //     echo "Error: " . $query . "<br>" . $conn->error;
+      // }
+
+      $conn->close();
+      ?>
+
     <script src="index.js"></script>
   </body>
 </html>

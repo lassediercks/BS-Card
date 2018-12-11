@@ -42,7 +42,7 @@
 
 
     <?php
-      $query = "INSERT INTO cards ('Max Mustermann', 'Php Entwickler')";
+      $query = "INSERT INTO cards ('Name', 'Titel') VALUES ('Max Mustermann', 'PHP Entwickler')";
       mysqli_query($conn, $query)
     ?>
     <script src="index.js"></script>

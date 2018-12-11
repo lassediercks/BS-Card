@@ -39,6 +39,12 @@
     </div>
 
     <?php include 'connect-to-db.php'; ?>
+
+
+    <?php
+      $query = "INSERT INTO cards ('Max Mustermann', 'Php Entwickler')";
+      mysqli_query($conn, $query)
+    ?>
     <script src="index.js"></script>
   </body>
 </html>

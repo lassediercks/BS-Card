@@ -16,17 +16,17 @@ include 'connect-to-db.php';
     <main class="content">
   <?php
 
-$query = "INSERT INTO `cards` (Name, Titel) VALUES ('Max Mustermann','$_POST[Titel]')";
+// $query = "INSERT INTO `cards` (Name, Titel) VALUES ('Max Mustermann','$_POST[Titel]')";
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
+// if ($conn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// } 
 
-if ($conn->query($query) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $query . "<br>" . $conn->error;
-}
+// if ($conn->query($query) === TRUE) {
+//     echo "New record created successfully";
+// } else {
+//     echo "Error: " . $query . "<br>" . $conn->error;
+// }
 
 echo "<div class='card-added'>
 <div class='scard-added_content'>

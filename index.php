@@ -15,7 +15,17 @@ include 'connect-to-db.php';
   </head>
   <body>
     <main class="content">
-      <h1>Visitenkarten die niemand braucht</h1>
+      <h1 class="title">
+        <span class="title-small">
+        Nicht ganz so ernstzunehmende
+        </span>
+        Visitenkarten
+      </h1>
+
+      <label class="name-input">
+        <input id="nameInput" type="text" class="bc-input">
+      </label>
+
       <?php
 
         $GetDataQuery = "SELECT ID,Name,Titel FROM cards";
@@ -31,33 +41,24 @@ include 'connect-to-db.php';
 
     <div class="add-card">
       <h2 class="add-card-headline">Deine Karte hinzufügen</h2>
+
+
+      <form action="insert.php" method="post">
+
       <label class="label">
         <span class="label-title">Titel</span>
         <input
           class="label-input"
           type="text"
+          name="Titel"
           placeholder="z.b. Die Frau der Stunde"
         />
       </label>
       <button class="add-card-button">Karte hinzufügen</button>
+      </form>
+
     </div>
 
-    <?php 
-      $query = "INSERT INTO `cards` (Name, Titel) VALUES ('Max Mustermann','PHP Entwickler')";
-
-
-      // if ($conn->connect_error) {
-      //   die("Connection failed: " . $conn->connect_error);
-      // } 
-
-      // if ($conn->query($query) === TRUE) {
-      //     echo "New record created successfully";
-      // } else {
-      //     echo "Error: " . $query . "<br>" . $conn->error;
-      // }
-
-      $conn->close();
-      ?>
 
     <script src="index.js"></script>
   </body>

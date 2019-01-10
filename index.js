@@ -21,3 +21,19 @@ class Card extends HTMLElement {
 }
 
 customElements.define('b-card', Card);
+
+let nameInput = document.querySelector('#nameInput');
+let cardNames = document.querySelectorAll('.card-name');
+
+nameInput.addEventListener('input', () => {
+  console.log(nameInput.value);
+  updateValue(nameInput.value);
+});
+
+function updateValue(val) {
+  cardNames.forEach(el => {
+    el.innerHTML = val;
+  });
+}
+
+console.log(cardNames);

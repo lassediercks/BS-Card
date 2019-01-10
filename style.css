@@ -1,6 +1,8 @@
 :root {
+  --bc-babyblue: #bfefff;
   --bc-base: 4px;
-  --bc-inner: 0.5em 0.7em;
+  --bc-dark: #15181b;
+  --bc-inner: 0.5em 1.2em;
   --bc-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
   --bc-shadow--big: 0 2px 20px 0 rgba(0, 0, 0, 0.11);
 }
@@ -12,6 +14,8 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   text-align: center;
   font-size: 18px;
   font-family: Open Sans;
@@ -31,47 +35,89 @@ body {
   font-weight: 300;
 }
 
+.content {
+  margin: 0 auto;
+  padding: var(--bc-inner);
+  max-width: 900px;
+}
+
+/* Card */
 .card {
-  color: #535353;
+  text-align: left;
+
+  position: relative;
+  color: var(--bc-dark);
   margin: 0 auto 20px auto;
-  width: 84mm;
+  width: 100%;
   background: white;
   box-shadow: var(--bc-shadow--big);
   display: flex;
   justify-content: center;
-  padding: 0 0 0 15mm;
+  padding: 0 0 0 10vw;
   box-sizing: border-box;
   flex-direction: column;
   align-items: flex-start;
 }
+
 .card:after {
   content: ' ';
   display: block;
-  padding-bottom: 35.29%;
+  padding-bottom: 64%;
 }
 
 .card-name {
   font-weight: bold;
-  font-size: 20pt;
+  font-family: serif;
+  font-size: 1.6rem;
 }
 
-.text {
+@media (min-width: 320px) {
+  .card-name {
+    font-size: calc(1.6rem + 3.125vw - 10px);
+  }
+}
+
+@media (min-width: 960px) {
+  .card-name {
+    font-size: calc(1.6rem + 20px);
+  }
+}
+
+.card-text {
+  font-size: 1.15rem;
   margin: 0;
   padding: 0;
 }
 
-.content {
-  padding: var(--bc-inner);
+@media (min-width: 320px) {
+  .card-text {
+    font-size: calc(1.15rem + 3.125vw - 10px);
+  }
 }
+
+@media (min-width: 960px) {
+  .card-text {
+    font-size: calc(1.15rem + 20px);
+  }
+}
+
+.card-inner {
+  position: absolute;
+}
+/* Card End */
+
 /* add card */
 
 .add-card {
-  max-width: 600px;
-  background: #0e0e0e;
-  color: white;
-  margin: 0 auto;
+  box-shadow: var(--bc-shadow--big);
+
+  display: flex;
+  justify-content: center;
   border-radius: 5px;
-  padding: 1em 2em;
+  padding: 2em 2em;
+}
+.add-card__content {
+  max-width: 600px;
 }
 
 .add-card-headline {
@@ -109,19 +155,18 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
-.add-card-button {
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  padding: var(--bc-inner);
-  font-size: 20px;
-}
-
 /* Input */
 
-.name-input {
+.bc-label {
   display: block;
   margin: calc(var(--bc-base) * 8) 0;
+}
+
+.bc-label__text {
+  display: block;
+  margin-bottom: calc(var(--bc-base) * 2);
+
+  text-align: left;
 }
 
 .bc-input {
@@ -139,4 +184,30 @@ body {
 .bc-input:focus {
   outline: none;
   box-shadow: 0 2px 8px 0 rgba(255, 177, 10, 0.3);
+}
+
+/* Button */
+
+.bc-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--bc-dark);
+  text-decoration: none;
+  background: var(--bc-babyblue);
+  width: 100%;
+  height: calc(var(--bc-base) * 12);
+  border: none;
+  border-radius: 3px;
+  padding: var(--bc-inner);
+  font-size: 20px;
+}
+
+/* Card Added  */
+
+.card-added {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }

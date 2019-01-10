@@ -8,15 +8,19 @@ class Card extends HTMLElement {
     this.innerHTML = '';
     this.className = 'card';
 
+    var cardInner = document.createElement('div');
+    cardInner.className = 'card-inner';
+    this.appendChild(cardInner);
+
     var cardNameDiv = document.createElement('div');
     cardNameDiv.className = 'card-name';
     cardNameDiv.innerHTML = name;
-    this.appendChild(cardNameDiv);
+    cardInner.appendChild(cardNameDiv);
 
     var cardContent = document.createElement('p');
+    cardContent.className = 'card-text';
     cardContent.innerHTML = innerContent;
-    cardContent.className = 'text';
-    this.appendChild(cardContent);
+    cardInner.appendChild(cardContent);
   }
 }
 

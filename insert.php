@@ -28,7 +28,11 @@ if ($conn->query($query) === TRUE) {
     echo "Error: " . $query . "<br>" . $conn->error;
 }
 
-echo "Deine Karte ist dabei! </br> <a href='/'>Züruck zu allen Karten</a>";
+echo "<div class='card-added'>
+<div class='scard-added_content'>
+ <h1>Deine Karte ist dabei!</h1> </br> <a class='bc-button' href='/'>Direkt mal anschauen</a>
+</div>
+ </div>";
 $conn->close();
 
   ?>
